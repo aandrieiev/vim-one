@@ -267,6 +267,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
     let s:syntax_bg     = '282c34'
     let s:syntax_gutter = '636d83'
     let s:syntax_cursor = '2c323c'
+    let s:syntax_number = '0d3642'
 
     let s:syntax_accent = '528bff'
 
@@ -294,6 +295,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
     let s:syntax_bg     = 'fafafa'
     let s:syntax_gutter = '9e9e9e'
     let s:syntax_cursor = 'f0f0f0'
+    let s:syntax_number = s:syntax_bg
 
     let s:syntax_accent = '526fff'
     let s:syntax_accent_2 = '0083be'
@@ -324,7 +326,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('Folded',       s:syntax_bg,     s:syntax_fold_bg, 'none')
   call <sid>X('FoldColumn',   s:mono_3,        s:syntax_cursor,  '')
   call <sid>X('IncSearch',    s:hue_6,         '',               '')
-  call <sid>X('LineNr',       s:mono_4,        '',               '')
+  call <sid>X('LineNr',       s:mono_4,        s:syntax_number,  '')
   call <sid>X('CursorLineNr', s:syntax_fg,     s:syntax_cursor,  'none')
   call <sid>X('MatchParen',   s:hue_5,         s:syntax_cursor,  'underline,bold')
   call <sid>X('Italic',       '',              '',               'italic')
@@ -349,7 +351,7 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   call <sid>X('WarningMsg',   s:hue_5,         '',               '')
   call <sid>X('TooLong',      s:hue_5,         '',               '')
   call <sid>X('WildMenu',     s:syntax_fg,     s:mono_3,         '')
-  call <sid>X('SignColumn',   '',              s:syntax_bg,      '')
+  call <sid>X('SignColumn',   '',              s:syntax_number,  '')
   call <sid>X('Special',      s:hue_2,         '',               '')
   " }}}
 
@@ -507,9 +509,9 @@ if has('gui_running') || &t_Co == 88 || &t_Co == 256
   hi link gitcommitSelectedArrow  gitcommitSelectedFile
   hi link gitcommitUnmergedArrow  gitcommitUnmergedFile
 
-  call <sid>X('SignifySignAdd',    s:hue_4,   '', '')
-  call <sid>X('SignifySignChange', s:hue_6_2, '', '')
-  call <sid>X('SignifySignDelete', s:hue_5,   '', '')
+  call <sid>X('SignifySignAdd',    s:hue_4,   s:syntax_number, '')
+  call <sid>X('SignifySignChange', s:hue_6_2, s:syntax_number, '')
+  call <sid>X('SignifySignDelete', s:hue_5,   s:syntax_number, '')
   hi link GitGutterAdd    SignifySignAdd
   hi link GitGutterChange SignifySignChange
   hi link GitGutterDelete SignifySignDelete
